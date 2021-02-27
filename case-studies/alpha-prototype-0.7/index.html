@@ -1,0 +1,3293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+
+<title>Your feeds - AlphaDig</title>
+
+<link type="text/css" href="css/ui-darkness/jquery-ui-1.8.5.custom.css" rel="stylesheet" />	
+<link rel="stylesheet" href="css/BreadCrumb.css" type="text/css">	
+<link rel="stylesheet" href="css/jScrollPane.css" type="text/css" media="screen" />	
+<link rel="stylesheet" href="css/demoStyles.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/z.css" type="text/css" media="screen" />
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.color.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>
+<script type="text/javascript" src="js/highlight.js"></script>
+<!--<script type="text/javascript" src="js/jquery.masonry.min.js"></script>-->
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<!--<script type="text/javascript" src="http://cdn.jquerytools.org/1.2.4/jquery.tools.min.js"></script>-->
+<script type="text/javascript" src="js/jScrollPane.js"></script>
+<script type="text/javascript" src="js/insert.js"></script>
+<script src="js/jquery.jBreadCrumb.1.1.js" type="text/javascript" language="JavaScript"></script>
+<script type="text/javascript" src="js/jquery.scrollTo-1.4.2.js"></script> <!-- required -->
+<script type="text/javascript" src="js/jquery.support.windowsTheme-0.3.js"></script> <!-- optional: for better skinning support -->
+<script type="text/javascript" src="js/jquery.dropdownReplacement-0.5-pack.js"></script> <!-- required -->
+<link   rel="stylesheet" href="css/jquery.dropdownReplacement-0.5.css" media="screen"/> <!-- required -->
+<script type="text/javascript" src="js/jquery.jstree.js"></script>
+<script type="text/javascript" src="js/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript">
+
+$(function() {
+
+        /**
+         * Search box highlighting
+         */
+        $('.inlineSearch').bind('keyup change', function(ev) {
+          // pull in the new value
+          var searchTerm = $(this).val();
+          var column = $(this).closest('li.col').find('div.itemList');
+          
+          // remove any old highlighted terms
+          column.removeHighlight();
+          $('.item', column).css('opacity', '1').removeClass('matchFound');
+          
+          // disable highlighting if empty + length check
+          if ( searchTerm && searchTerm.length > 1) {
+            // highlight the new term
+            column.highlight( searchTerm );
+            
+            // set a class on the parent of each item
+            $('span.highlight').closest('div.item').addClass('matchFound');
+            
+            // hide any items in our column with no matches
+            $('.item:not(.matchFound)', column).css('opacity', '0.1');
+          }
+        });
+
+				jQuery(".breadCrumbHolder").jBreadCrumb();
+				var $o = $("#customOptions1");
+				
+				$('#signIn').click(function() {
+					    $(".loginPanel").hide();
+					    $(".loading").show().delay('4000').parent().fadeOut();
+					    return false;
+					  });	
+				$('.closeBtn').click(function() {
+					    $(this).parent().parent().hide();
+					    return false;
+					  });	
+				
+				$("#col1a a.slideRight").click(function() {
+					$('#col1a .slideWrap').animate({
+						marginLeft:'-299px',
+					  }, 500, 
+					 function() { 
+						$("#col1aarticle").delay(1000).slideDown();
+					 });
+				});				
+				$("#col1a a.slideLeft").click(function() {
+					$('#col1a .slideWrap').animate({
+						marginLeft:'0px',
+					  }, 500, 
+					 function() { 
+						$("#col1aarticle").slideUp()
+					 });
+				});
+				$("#col8 a.slideRight").click(function() {
+					$('#col8 .slideWrap').animate({
+						marginLeft:'-299px',
+					  }, 500, 
+					 function() { 
+						$("#col8article").delay(1000).slideDown();
+					 });
+				});				
+				$("#col8 a.slideLeft").click(function() {
+					$('#col8 .slideWrap').animate({
+						marginLeft:'0px',
+					  }, 500, 
+					 function() { 
+						$("#col8article").slideUp()
+					 });
+				});
+				$("#col2 a.slideRight").click(function() {
+					$('#col2 .slideWrap').animate({
+						marginLeft:'-299px',
+					  }, 500, 
+					 function() { 
+						$("#col2article").delay(1000).slideDown();
+					 });
+				});				
+				$("#col2 a.slideLeft").click(function() {
+					$('#col2 .slideWrap').animate({
+						marginLeft:'0px',
+					  }, 500, 
+					 function() { 
+						$("#col2article").slideUp()
+					 });
+				});
+				$("#itemList3 a").click(function() {
+					$('#col3 .slideWrap').animate({
+						marginLeft:'-299px',
+					  }, 500, 
+					 function() { 
+						$("#col3article").delay(1000).slideDown();
+					 });
+				});				
+				$("#col3panes .backSlide").click(function() {
+					$('#col3 .slideWrap').animate({
+						marginLeft:'0px',
+					  }, 500, 
+					 function() { 
+						$("#col3article").slideUp()
+					 });
+				});
+				$("#col4 a.slideRight").click(function() {
+					$('#col4 .slideWrap').animate({
+						marginLeft:'-299px',
+					  }, 500, 
+					 function() { 
+						$("#col4article").delay(1000).slideDown();
+					 });
+				});				
+				$("#col4 a.slideLeft").click(function() {
+					$('#col4 .slideWrap').animate({
+						marginLeft:'0px',
+					  }, 500, 
+					 function() { 
+						$("#col4article").slideUp()
+					 });
+				});
+				$("#col5 a.slideRight").click(function() {
+					$('#col5 .slideWrap').animate({
+						marginLeft:'-299px',
+					  }, 500, 
+					 function() { 
+						$("#col5article").delay(1000).slideDown();
+					 });
+				});				
+				$("#col5 a.slideLeft").click(function() {
+					$('#col5 .slideWrap').animate({
+						marginLeft:'0px',
+					  }, 500, 
+					 function() { 
+						$("#col5article").slideUp()
+					 });
+				});
+				$(".postBtn").click(function() {
+					$(this).parent().find('.filter').slideToggle('300', function() {
+						$(this).parent().toggleClass('active');
+				    });
+
+				});
+				$(".colScroll").hover(
+				  function () {
+					$(this).bind('mousewheel', function(event, delta) {
+						console.log(delta);
+					});
+				  }, 
+				  function () {
+					$(this).unbind('mousewheel', function(event, delta) {
+						console.log(delta);
+					});
+				  }
+				);
+				
+				
+				
+				
+				
+				
+
+				
+				
+				
+				$("#colsWrap").sortable({ handle: '.colHead' });
+				$("#colsWrap").sortable({ tolerance: 'pointer' });				
+				$("#colsWrap").sortable({ placeholder: 'ui-state-highlight colPlaceHolder' });
+				$("#colsWrap").sortable({ axis: "x" });
+				$( ".col" ).droppable({
+					over: function( event, ui ) {
+						$( this )
+							.addClass( "colOver" )
+							.find( ".dropAlert" ).show();
+								
+					}
+				});
+				$( ".col" ).droppable({
+				   out: function(event, ui) { 
+						$( this )
+							.removeClass( "colOver" )
+							.find( ".dropAlert" ).fadeOut();								
+				   
+				   }
+				});
+				$( ".col" ).droppable({
+				   drop: function(event, ui) { 
+						$( this )
+							.removeClass( "colOver" )							
+							.find( ".dropAlert" ).hide();							
+						$(insertedBreadcrumb).hide().prependTo('#col6 .colHead').slideDown("250");
+						$('#col6 .itemList').slideUp('slow').slideDown('slow');
+						$('#col7').fadeOut();
+				   }
+				});			
+				var insertedBreadcrumb = [
+					'<div class="breadCrumbHolder module crumbPath">',
+						'<div class="breadCrumb module" id="breadCrumb4">',
+							'<div style="overflow: hidden; position: relative; width: 285px;"><div><ul style="width: 5000px;">',
+								'<li class="first">',
+									'<a href="#"><span class="ui-icon ui-icon-signal-diag"></span></a>',
+								'</li>',
+								'<li class="leftEnd">',
+									'<span style="width: 5px; display: block;"><a href="#" style="width: 24px;">US</a></span>',
+								'<div class="chevronOverlay" style="display: none;"></div></li>',
+								'<li>',
+									'<span style="width: 5px; display: block;"><a href="#" style="width: 38px;">Credit</a></span>',
+								'<div class="chevronOverlay" style="display: none;"></div></li>',
+								'<li>',
+									'<a href="#">Topics</a>',
+								'</li>',
+								'<li class="last">',
+									'<a href="#">Event Driven</a>',
+								'</li>',								
+							'</ul></div><a class="smallClose"><span class="ui-icon ui-icon-close"></span></a></div>',
+						'</div>',
+					'</div>'
+				].join('');
+				
+				
+				$("#upLevel").click(function() {
+					$(this).parent().addClass('last');
+					$('#upLevelLast').css('display', 'none');
+					$('#itemList2').slideUp('slow').slideDown('slow');
+				});
+				
+				
+				$('.saveBtn').toggle(function() {
+					$(this).addClass('saved');
+					$(this).html('<span class="ui-icon ui-icon-pin-s"></span>Saved');
+				}, function() {
+					$(this).removeClass('saved');
+					$(this).html('<span class="ui-icon ui-icon-pin-s"></span>Save this');
+				});
+				
+				/*
+				setTimeout( function() { $('#hiddenItem6').hide().detach().css({'background-color':'#6DAC17'}).prependTo('#itemList5').slideDown().animate({'backgroundColor': '#2E2E2E'}, { duration: '2000' }); }, 5000);
+				setTimeout( function() { $('#activityItem1').hide().detach().css({'background-color':'#6DAC17'}).prependTo('#itemList2').slideDown().animate({'backgroundColor': '#2E2E2E'}, { duration: '2000' }); }, 2000);
+				setTimeout( function() { $('#activityItem1 .title .comments').html('7').parent().parent().css({'background-color':'#6DAC17'}).animate({'backgroundColor': '#424242'}, { duration: '2000' }); }, 8000);
+				setTimeout( function() { $('#hiddenItem5').detach().prependTo('#itemList5').slideDown() }, 14000);	
+				setTimeout( function() { $('#hiddenItem4').detach().prependTo('#itemList4').slideDown(); }, 5000);
+				setTimeout( function() { $('#hiddenItem1').detach().prependTo('#itemList2').slideDown(); }, 5000);
+				setTimeout( function() { $('#hiddenItem2').detach().prependTo('#itemList2').slideDown(); }, 12000);
+				setTimeout( function() { $('#hiddenItem3').hide().detach().css({'background-color':'#6DAC17'}).prependTo('#itemList3').slideDown().animate({'backgroundColor': '#2E2E2E'}, { duration: '2000' }); }, 5000);
+				*/
+				
+				$('.toggle .off').live('click', function() {			  
+			  
+			  $('em', this).animate({
+				left: "28px"
+			  }, 300, "linear", function(){
+				$(this).parent().addClass('on').removeClass('off');
+				} );
+			});
+			
+			$(".openThirdFeed").click(function() {
+					$('#col5').fadeIn('slow');
+				});
+			$(".smallClose").click(function() {
+					$(this).closest('.breadCrumbHolder').slideUp('fast');
+					$('#col6 .itemList').slideUp('slow').slideDown('slow');
+				});
+			
+			$('.toggle .on').live('click', function() {			  
+			  
+			  $('em', this).animate({
+				left: "0px"
+			  }, 300, "linear", function(){
+				$(this).parent().addClass('off').removeClass('on');
+				} );
+			});		
+				
+				
+				var colourLevels = {
+					l1: '#181817',
+					l2: '#2E2E2E',
+					l3: '#424242',
+					l4: '#575757',
+					l5: '#6A6A6A',
+					l6: '#3A5517',
+					l7: '#4C7317',
+					l8: '#6DAC17',
+					lcert: '#0BB0B9',
+					lp: '#cccccc'
+				};
+				
+				/**
+				 * Reinserts items in random lists after random delays
+				 */
+				var randInsert = function() {
+					var target = $('#itemList' + (2 + parseInt(Math.random() * 6)).toString());
+					var children = $('.item', target);
+					var child = children[parseInt(Math.random() * children.length) - 1];
+					
+					// find current level of child
+					if ($(child).hasClass('lcert')) {
+						var endLevel = colourLevels.lcert;
+					} else {
+						var endLevel = colourLevels.l2;
+						for (level in colourLevels) {
+							if ($(child).hasClass(level)) {
+								var levelNumber = level.substring(1);
+								endLevel = colourLevels['l' + levelNumber];
+								break;
+							}
+						}
+					}
+					
+					// reinsert
+					$(child).hide().detach().css({'background-color': colourLevels.lp}).prependTo(target).slideDown().animate({'backgroundColor': endLevel}, { duration: '100' });
+					
+					// call self after random delay
+					var delayMinimum = 500;
+					var delayRange = 3500;
+					setTimeout(randInsert, delayMinimum + Math.random() * delayRange);
+				}
+				
+				randInsert();
+				
+                
+});		
+</script>
+<script type="text/javascript">
+
+$(function()
+				{
+				
+				// this initialises the demo scollpanes on the page.
+				$('.colScroll').jScrollPane();					
+				$('.scroll-pane-arrows').jScrollPane(
+					{
+						showArrows: true,
+						horizontalGutter: 10
+					}
+				);
+
+				var isResizing;
+				
+				// and the body scrollpane
+				var setContainerHeight = function()
+				{
+					// IE triggers the onResize event internally when you do the stuff in this function
+					// so make sure we don't enter an infinite loop and crash the browser
+					if (!isResizing) { 
+						isResizing = true;
+						$w = $(window);
+						$c = $('#container');
+						var p = (parseInt($c.css('paddingLeft')) || 0) + (parseInt($c.css('paddingRight')) || 0);
+						$('body>.jScrollPaneContainer').css({'height': $w.height() + 'px', 'width': $w.width() + 'px'});
+						$c.css({'height': ($w.height()-p) + 'px', 'width': ($w.width() - p) + 'px', 'overflow':'auto'});
+						$c.jScrollPane();
+						isResizing = false;	
+					}
+				}
+				$(window).bind('resize', setContainerHeight);
+				setContainerHeight();
+				
+				// it seems like you need to call this twice to get consistantly correct results cross browser...
+				setContainerHeight();
+				
+				$(function() {
+					$( "#dialog-modal" ).dialog({
+						height: 140,
+						modal: true,
+						autoOpen: false,
+						title: 'Add column'
+					});
+				});
+				$(function() {
+					$( ".filterModal" ).dialog({
+						width: 800,
+						resizable: false,
+						modal: true,
+						autoOpen: false,
+						title: 'Tags'
+					});
+				});
+				
+				$('.filterFoot a').live('click', function() {	 
+					$('.filterModal').dialog('close');
+				});		
+				
+				
+				
+				
+				$(function() {
+					$('#col1a').hide();
+					$('#col5').hide();
+				});
+				
+				$(function() {
+					var treeItem = $('#tree ul li ul li a').html();
+					$('#tree ul li ul li a').click(function() {
+					 //   $('#col1a').toggle();
+						$('.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix').prepend(
+							'<p class="chosenFeed">Europe > Credit > Products > High Yield > TMT</p>'
+							);
+					    return false;
+					  });
+				});
+		
+				$(function() {
+					$('.btn-feed').click(function() {
+					    $("#dialog-modal").dialog('open')
+						});
+					    return false;
+					  });
+				$(function() {
+					$('.filterLink').click(function() {
+					    $(".filterModal").dialog('open')
+						});
+					    return false;
+					  });
+			
+					$(function () {
+						$("#tree").jstree({
+							"plugins" : [ "themes", "html_data" ]
+						});
+					});
+					
+					$(function() {
+						$( "#datepicker" ).datepicker();
+					});
+
+
+					
+					$( "#dialog-modal" ).dialog({
+								resizable: false,
+								height:400,
+								modal: true,
+								buttons: {
+									Add: function() {
+										$( this ).dialog( "close" );
+										$('#col1a').fadeIn('slow');
+									}
+								}
+							});
+							
+					
+					$(function() {
+                        var message = new Array();
+                        message[0] = '<form id="chatform2"><input type="text" value="Enter chat" id="msg2" /><input type="submit" value="Send"/></form>';
+                        message[1] = '<form id="chatform2"><input type="text" value="http://" id="msg2" /><br/><textarea name="c2comments1" id="c2comments1" cols="30" rows="5">Description (optional)</textarea><br/><input type="submit" value="Send"/></form>';
+                        message[2] = '<form id="chatform2"><input type="text" value="Title" id="msg2" /><textarea name="c2comments1" id="c2comments1" cols="30" rows="10">Body text</textarea><br/><input type="submit" value="Send"/></form>';
+                        message[3] = '<form id="chatform2"><input type="text" value="Title" id="msg2" /><br/><textarea name="c2comments1" id="c2comments1" cols="30" rows="5">Question</textarea><br/><input type="text" value="Answer 1" id="answ1" /><br/><input type="text" value="Answer 2" id="answ2" /><br/><input type="text" value="Answer 3" id="answ3" /><br/><input type="text" value="Answer 4" id="answ4" /><br/><input type="submit" value="Send"/></form>';
+                        message[4] = '<form id="chatform2"><input type="text" value="Title" id="msg2" /><br/><input type="text" value="Date" id="msg2" /><textarea name="c2comments1" id="c2comments1" cols="30" rows="5">Description (optional)</textarea><br/><input type="submit" value="Send"/></form>';                       
+                        message[5] = '<form id="chatform2"><input type="text" value="Browse" id="msg2" /><input type="submit" value="Upload"/><br/><textarea name="c2comments1" id="c2comments1" cols="30" rows="5">Description (optional)</textarea><br/><input type="submit" value="Send"/></form>';                       
+
+                        $(function(){
+                            $(".filter select").change(function()
+                            {
+                                var message_index = $(this).attr("selectedIndex");
+                                var message_display = $(this).parent().find('.message_display');
+                                $(message_display).empty();
+                                $(message_display).append(message[message_index]).slideDown();
+								
+                            });
+                        });
+                    }); 
+					
+
+					
+					
+				
+
+					
+			});
+
+			
+		
+</script>
+
+<style type="text/css">
+		
+		.jScrollPaneTrack {background:#333;}
+				
+</style>
+	
+</head>
+<body class="feeds">
+	
+	<div id="dialog-modal" title="Basic modal dialog">
+		<p class="treeIntro">Select a community from the list below or enter tags to search for.</p>
+		<div id="tree">
+			<ul>
+				<li><a href="#">Global</a>
+					<ul>
+						<li><a href="#">Commodities</a></li>
+						<li><a href="#">Rates/FX</a></li>						
+					</ul>
+				</li>
+				<li><a href="#">Asia</a>
+					<ul>
+						<li><a href="#">Credit</a>
+							<ul>
+								<li><a href="#">Products</a>
+									<ul>
+										<li><a href="#">Indices</a>
+											<ul>
+												<li><a href="#">Crossover</a>
+													<ul>
+														<li><a href="#">Virgin Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">ITraxx Main</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Investment Grade</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">High Yield</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Leveraged Loans</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Distressed Debt</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Convertible Bonds</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Structured</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">ABS</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li><a href="#">Topics</a>
+									<ul>
+										<li><a href="#">Event Driven</a>
+											<ul>
+												<li><a href="#">Asset Sales</a></li>
+												<li><a href="#">IPO/Exit Strategy</a></li>
+												<li><a href="#">LBO</a></li>
+												<li><a href="#">M&amp;A</a></li>
+											</ul>
+										</li>
+										<li><a href="#">New Issuance</a></li>
+										<li><a href="#">Ratings</a></li>
+										<li><a href="#">Trade Ideas</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="">Equity</a></li>						
+					</ul>
+				</li>
+				<li><a href="#">Europe</a>
+					<ul>
+						<li><a href="#">Credit</a>
+							<ul>
+								<li><a href="#">Products</a>
+									<ul>
+										<li><a href="#">Indices</a>
+											<ul>
+												<li><a href="#">Crossover</a>
+													<ul>
+														<li><a href="#">Virgin Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">ITraxx Main</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Investment Grade</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">High Yield</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Leveraged Loans</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Distressed Debt</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Convertible Bonds</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Structured</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">ABS</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li><a href="#">Topics</a>
+									<ul>
+										<li><a href="#">Event Driven</a>
+											<ul>
+												<li><a href="#">Asset Sales</a></li>
+												<li><a href="#">IPO/Exit Strategy</a></li>
+												<li><a href="#">LBO</a></li>
+												<li><a href="#">M&amp;A</a></li>
+											</ul>
+										</li>
+										<li><a href="#">New Issuance</a></li>
+										<li><a href="#">Ratings</a></li>
+										<li><a href="#">Trade Ideas</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="">Equity</a></li>						
+					</ul>
+				</li>
+				<li><a href="#">US</a>
+					<ul>
+						<li><a href="#">Credit</a>
+							<ul>
+								<li><a href="#">Products</a>
+									<ul>
+										<li><a href="#">Indices</a>
+											<ul>
+												<li><a href="#">Crossover</a>
+													<ul>
+														<li><a href="#">Virgin Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">ITraxx Main</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Investment Grade</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">High Yield</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Leveraged Loans</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Distressed Debt</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Convertible Bonds</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Structured</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+										<li><a href="#">ABS</a>
+											<ul>
+												<li><a href="#">Basic industries</a>
+													<ul>
+														<li><a href="#">Chemicals</a>
+															<ul>
+																<li><a href="#">BASF</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Consumer</a></li>
+													</ul>
+												</li>	
+												<li><a href="#">Energy</a></li>
+												<li><a href="#">Financial services</a></li>
+												<li><a href="#">Manufacturing</a></li>												
+												<li><a href="#">TMT</a>
+													<ul>
+														<li><a href="#">Cable</a>
+															<ul>
+																<li><a href="#">Virgin media</a></li>
+															</ul>
+														</li>
+														<li><a href="#">Media</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Transportation</a></li>
+												<li><a href="#">Consumer</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li><a href="#">Topics</a>
+									<ul>
+										<li><a href="#">Event Driven</a>
+											<ul>
+												<li><a href="#">Asset Sales</a></li>
+												<li><a href="#">IPO/Exit Strategy</a></li>
+												<li><a href="#">LBO</a></li>
+												<li><a href="#">M&amp;A</a></li>
+											</ul>
+										</li>
+										<li><a href="#">New Issuance</a></li>
+										<li><a href="#">Ratings</a></li>
+										<li><a href="#">Trade Ideas</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="">Equity</a></li>						
+					</ul>
+				</li>				
+			</ul>
+
+		</div>
+		
+	</div>
+	
+	<div id="header">
+		<div class="headWrap">
+			<h1>Project Alpha</h1>
+			<a href="#" class="banner"></a>
+			<ul id="nav">
+				<li>
+					<a href="#" class="feeds">Your feeds</a>			
+				</li>
+				<li>
+					<a href="#" class="directory">Directory</a>			
+				</li>
+				<li>
+					<a href="#" class="calendar">Calendar</a>			
+				</li>
+				<li>
+					<a href="#" class="messages">Messages</a>			
+				</li>				
+			</ul>
+			<ul class="btns">				
+				<li><a class="ui-state-default ui-corner-all btn-feed btnStyle" id="dialog_link" href="#"><span class="ui-icon ui-icon-plusthick"></span>Add column</a></li>				
+			</ul>
+			<span class="search"></span>
+		</div>
+	</div>
+	<div id="main">
+		<ul class="colsWrap" id="colsWrap">
+		
+
+		<li class="col single" id="col1a">
+			<div class="dropAlert">Drop to combine these columns</div>
+			
+				<div class="colHead">		
+<div class="breadCrumbHolder module crumbPath">
+						<div id="breadCrumb2" class="breadCrumb module">
+							<ul>
+								<li>
+									<a href="#"><span class="ui-icon ui-icon-signal-diag"></span></a>
+								</li>
+								<li class="leftEnd">
+									<a href="#">Europe</a>
+								</li>
+								<li>
+									<a href="#">Credit</a>
+								</li>
+								<li>
+									<a href="#">High Yield</a>
+								</li>
+								<li>
+									<a href="#">TMT</a>
+								</li>								
+							</ul>
+						</div>
+					</div>
+					<ul class="orderPosts">
+						<li class="active"><a href="#">Recent</a></li>
+						<li><a href="#">Top today</a></li>
+						<li><a href="#">Top this week</a></li>
+					</ul>
+					<a href="#" class="closeBtn">Close column</a>
+					<a href="#" class="postBtn">New post</a>
+					<a href="#" class="refreshBtn">Refresh toggle</a>
+					<div class="filter">	
+								<select name="postType" id="postSelect">
+									<option value="Chat">Chat</option>
+									<option value="Link">Link</option>									
+									<option value="Report">Report</option>
+									<option value="Poll">Poll</option>																	
+									<option value="Event">Event</option>
+									<option value="File">File</option>
+								</select>
+								<input type="submit" value="Tags" class="filterLink colHeadTags"/> 
+							<div class="inputField message_display">
+								
+								<form id="chatform3">     
+									<input type="text" id="msg3" />       
+									<input type="submit" value="Send"/>   
+								</form>
+							</div>	
+					</div>
+				
+			</div>
+				<div class="colMain colScroll" id="col1apanes">				
+					<div class="pane">
+						<div class="slideWrap">
+						<div class="article">
+							<div class="itemList slidingList">
+								<div class="item backSlide">
+									<h3>
+										<a href="#" class="slideLeft">&larr; Back to community</a>
+									</h3>									
+								</div>
+							</div>
+							<div id="col1aarticle" class="innerArticle">
+								<h2>Grohe approached by investment banks for IPO next year</h2>
+								<p>NEW YORK (TheStreet) -- Virgin Media(VMED)  repurchased over 1 million shares of common stock today. The British cable TV company bought back 1.1 shares as a part of the planned $194 million stock buyback transaction it announced on July 28.
+Virgin Media
+Today's buyback brought the total amount of stock repurchased through this plan to 9,334,721 shares. The average purchase price per share was $20.78.
+
+Virgin Media shares are up more than 3.35% and trading at the high end of its 52-week range to $20.23. </p>
+								<h3>2 Comments</h3>
+								<div class="commentsForm">
+									<textarea name="c1acomments1" id="c1acomments1" cols="30" rows="4"></textarea>
+									<input type="submit" value="Send" />
+								</div>
+							</div>
+							
+						</div>
+						<div class="itemList" id="itemList1a">
+							<div class="item link l1">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">London close: Footsie rebounds as Wall Street recovers</a>
+								</h3>
+								<a href="#" class="comments">45</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">James Knight</a></li>
+							  </ul>
+							</div>
+							<div class="item link l4">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Davis FD increases stake</a>
+								</h3>
+								<a href="#" class="comments">44</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l3">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Small caps round-up: Augean, Juridica, Origo</a>
+								</h3>
+								<a href="#" class="comments">14</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Ted Rochester</a></li>
+							  </ul>
+							</div>
+							<div class="item link l5">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Mining round-up: Dicovery Metals, Kefi, Ormonde </a>
+								</h3>
+								<a href="#" class="comments">39</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Daniel Lawrence</a></li>
+							  </ul>
+							</div>
+							<div class="item link l1">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Small caps: Speymill, Eco City, Crimson Tide ... (Sharecast)</a>
+								</h3>
+								<a href="#" class="comments">21</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Sharecast</a></li>
+							  </ul>
+							</div>
+							<div class="item link l3">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">US consumer confidence slumps in September: survey</a>
+								</h3>
+								<a href="#" class="comments">20</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>22:04PM - <a href="#">AFP</a></li>
+							  </ul>
+							</div>
+							<div class="item link l2">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Close Brothers receives lending boost [at Financial Times]</a>
+								</h3>
+								<a href="#" class="comments">21</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Financial Times</a></li>
+							  </ul>
+							</div>
+							<div class="item link l7">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">FTSE lifts upward as miners recover [at Financial Times]</a>
+								</h3>
+								<a href="#" class="comments">49</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Financial Times</a></li>
+							  </ul>
+							</div>
+							<div class="item link l3">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Brightside optimistic</a>
+								</h3>
+								<a href="#" class="comments">14</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Desmond Okuwa</a></li>
+							  </ul>
+							</div>
+							<div class="item link l2">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Market overview: FTSE 100 down 18</a>
+								</h3>
+								<a href="#" class="comments">40</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Ellen Hanson</a></li>
+							  </ul>
+							</div>
+							<div class="item link l1">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">London afternoon: Footsie becalmed</a>
+								</h3>
+								<a href="#" class="comments">21</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Michael Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l4">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">FTSE lower as US consumers lose confidence [at Financial Times]</a>
+								</h3>
+								<a href="#" class="comments">42</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Financial Times</a></li>
+							  </ul>
+							</div>
+
+						</div>
+						</div>
+					</div>							
+			</div>
+			<div class="colFoot">
+				<div class="colFootWrap">
+					<div class="footBtns">
+						<a href="#" class="filterLink ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-gear"></span>Filters</a>
+						<a href="#"  class="ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-notice"></span>Alerts</a>	
+					</div>
+					<div class="smallSearch">
+						<input type="text" class="inlineSearch" id="inline1a"/>    
+					</div>
+				</div>
+			</div>
+		
+		</li>
+
+		<li class="col single" id="col2">
+			<div class="dropAlert">Drop to combine these columns</div>
+			<div class="colHead">
+					<div class="breadCrumbHolder module crumbPath">
+						<div id="breadCrumb0" class="breadCrumb module">
+							<ul>
+								<li>
+									<a href="#"><span class="ui-icon ui-icon-signal-diag"></a>
+								</li>
+								<li class="leftEnd">
+									<a href="#">US</a>
+								</li>
+								<li>
+									<a href="#">Credit</a>
+								</li>
+								<li>
+									<a href="#" id="upLevel">Investment Grade</a>
+								</li>
+								<li id="upLevelLast">
+									<a href="#">TMT</a>
+								</li>								
+							</ul>
+						</div>
+					</div>
+					<ul class="orderPosts">
+						<li class="active"><a href="#">Recent</a></li>
+						<li><a href="#">Top today</a></li>
+						<li><a href="#">Top this week</a></li>
+					</ul>
+					<a href="#" class="closeBtn">Close column</a>
+					<a href="#" class="postBtn">New post</a>	
+					<a href="#" class="refreshBtn">Refresh toggle</a>	
+					
+					<div class="filter">
+					<select name="postType" id="postSelect">
+									<option value="Chat">Chat</option>
+									<option value="Link">Link</option>									
+									<option value="Report">Report</option>
+									<option value="Poll">Poll</option>																	
+									<option value="Event">Event</option>
+									<option value="File">File</option>
+								</select>
+								<input type="submit" value="Tags" class="filterLink colHeadTags"/> 
+							<div class="inputField message_display">
+								<form id="chatform5">     
+									<input type="text" id="msg5" class="message" />       
+									<input type="submit" value="Send"/>   
+								</form>
+							</div>
+					</div>
+			</div>
+			<div class="colMain colScroll" id="col2panes">
+					<div class="pane">
+						<div class="slideWrap">
+						<div class="article">
+							<div class="itemList slidingList">
+								<div class="item backSlide">
+									<h3>
+										<a href="#" class="slideLeft">&larr; Back to community</a>
+									</h3>									
+								</div>
+							</div>
+							<div id="col2article" class="innerArticle">
+								<h2>Kabel Deutschland rejects regulator moves</h2>
+								<p>Germany's largest cable operator Kabel Deutschland (KDG) has rejected the demands by telco Deutsche Telekom for regulation of the cable market by federal network agency Bundesnetzagentur, thereby opening up the networks to competitors.</p><p>
+
+Only through KDG's entry into the telecommunications market in 2005 real competition between infrastructures in the areas of internet and telephony has been created, the Munich-based cable company said in a statement.</p><p>
+
+KDG pointed to ADSL's dominance in the market for fast internet access, outlining that cable operators currently only had a 10% market share in the broadband market. “In our view, this doesn't justify regulation, the more so as regulation both in German and EU law is rightly tied to the existence of market domination.”</p><p>
+
+KDG's statement refers to comments recently made by Telekom's CEO René Obermann on submitting cable operators to regulation in order to make their infrastructure accessible to third-party companies. As ADSL market leader, Telekom has to grant competitors access to its broadband network with the conditions being set by Bundesnetzagentur.</p>
+								<a class="ui-state-default ui-corner-all btnStyle inlineStyle saveBtn"  href="#"><span class="ui-icon ui-icon-pin-s"></span>Save this</a>
+								<h3 class="commentsTitle">1 Comment</h3>
+								<div class="commentsList">
+								<div class="commentTemplate">
+									<p>I saw this coming when the KDG started pushing for deregulation last year, only thing that surprises me is the timing</p>
+									<ul class="meta">
+										<li class="author"><span class="ui-icon ui-icon-comment"></span>22:04PM - <a href="#">Matt Ross</a></li>
+								    </ul>									
+								</div>
+								</div>
+								<div class="commentsForm">
+									<form>
+									<h3>Write a comment</h3>
+									<textarea name="c2comments1" id="c2comments1" cols="30" rows="4"></textarea>
+									<input type="submit" value="Send" />
+									</form>
+								</div>
+							</div>
+								
+						</div>
+						<div class="itemList itemList2" id="itemList2">
+							<div class="item report hidden l1" id="hiddenItem2">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Wind Bonds Gain On Reports Of Sale to VimpelCom</a>
+								</h3>
+								<a href="#" class="comments">0</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-document"></span>9:32AM - <a href="#">Capital Structure</a></li>
+								</ul>
+							</div>
+							<div class="item link hidden l1" id="hiddenItem1">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">MREAL Financial Update and Competitor Benchmarking</a>
+								</h3>
+								<a href="#" class="comments">0</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>5:45PM - <a href="#">Matt Ross</a></li>
+								</ul>
+							</div>
+							<div class="item chat l2">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">I heard something about a report out of OFCOM, cant find it, anyone see it?</a>
+								</h3>
+								<a href="#" class="comments">1</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-comment"></span>11:01AM - <a href="#">Stacey Lipton</a></li>
+								</ul>
+							</div>
+							<div class="item report activity l3" id="activityItem1">
+								<div class="title">
+									<h3>
+										<a href="#" class="slideRight">Grohe approached by investment banks for IPO next year</a>
+									</h3>
+									<a href="#" class="comments">3</a>
+								</div>
+								<ul class="meta">									
+									<li class="author"><span class="ui-icon ui-icon-document"></span>9:32AM - <a href="#">Capital Structure</a></li>
+								</ul>
+							</div>
+							<div class="item chat l1">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Does anyone know when BT reports Q2 results?</a>
+								</h3>
+								<a href="#" class="comments">1</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-comment"></span>11:01AM - <a href="#">Stacey Lipton</a></li>
+								</ul>
+							</div>							
+							<div class="item poll l2">
+								<div class="title">
+								<h3>
+									<a href="pdf3.html" target="_blank">US Bank Asset Quality: Over the River, but not through the Woods</a>
+								</h3>
+								<a href="#" class="comments">2</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="pdfIcon"></span>11:25AM - <a href="#">Moody's</a></li>
+								</ul>
+							</div>
+							<div class="item link l3">
+								<div class="title">
+								<h3>
+									<a href="pdf4.html" target="_blank">Fitch report on ITV</a>
+								</h3>
+								<a href="#" class="comments">3</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="pdfIcon"></span>5:45PM - <a href="#">Fitch</a></li>
+								</ul>
+							</div>
+							<div class="item l7">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Heidelberg Cement Will Reduce Debt Thru Asset Sales and FCF Generation</a>
+								</h3>
+								<a href="#" class="comments">12</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-help"></span>7:52AM - <a href="#">BJ Kettlehut</a></li>
+								</ul>
+							</div>
+							<div class="item l8">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Codere: New Bonds, New Acquisition, Still MV</a>
+								</h3>
+								<a href="#" class="comments">3</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>10:45AM - <a href="#" class="openThirdFeed">Debtwire</a></li>
+								</ul>
+							</div>
+							<div class="item chat l1">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">I've heard some talk about Cognis being acquired by BASF.. anyone heard anything to support that?</a>
+								</h3>
+								<a href="#" class="comments">3</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-comment"></span>11:01AM - <a href="#">Stacey Lipton</a></li>
+								</ul>
+							</div>
+							<div class="item chat l3">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">I think the pricing environment for bundled products in Germany will come under increased pressure next year, do you think that's priced in?</a>
+								</h3>
+								<a href="#" class="comments">3</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-comment"></span>11:01AM by <a href="#">Stacey Lipton</a></li>
+								</ul>
+							</div>
+							<div class="item report l4">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Wind Bonds Gain On Reports Of Sale to VimpelCom </a>
+								</h3>
+								<a href="#" class="comments">4</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>9:32AM - <a href="#">Capital Structure</a></li>
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+							
+				</div>	
+			</div>
+			<div class="colFoot">
+				<div class="colFootWrap">
+					<div class="footBtns">
+						<a href="#" class="filterLink ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-gear"></span>Filters</a>
+						<a href="#"  class="ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-notice"></span>Alerts</a>	
+					</div>
+					<div class="smallSearch">
+						<input type="text" class="inlineSearch" id="inline2"/>    
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="col single" id="col5">
+				<div class="dropAlert">Drop to combine these columns</div>
+				<div class="colHead">
+					<div class="tagHolder module tags thirdFeed">
+						<div id="breadCrumb1" class="breadCrumb module">
+							<span class="thirdIcon"><img src="img/lock-page-green.gif" alt="#" /></span>
+							<a href="#" class="thirdTitle">Debtwire</a>
+						</div>
+					</div>
+					<ul class="orderPosts">
+						<li class="active"><a href="#">Recent</a></li>
+						<li><a href="#">Top today</a></li>
+						<li><a href="#">Top this week</a></li>
+					</ul>
+					<a href="#" class="closeBtn">Close column</a>
+					<a href="#" class="refreshBtn">Refresh toggle</a>
+					<div class="filter">	
+								<select name="postType" id="postSelect">
+									<option value="Chat">Chat</option>
+									<option value="Link">Link</option>									
+									<option value="Report">Report</option>
+									<option value="Poll">Poll</option>																	
+									<option value="Event">Event</option>
+									<option value="File">File</option>
+								</select>	
+								<input type="submit" value="Tags" class="filterLink colHeadTags"/> 
+							<div class="inputField message_display">
+								<form id="chatform5">     
+									<input type="text" id="msg5" class="message" />       
+									<input type="submit" value="Send"/>   
+								</form>
+							</div>	
+					</div>
+				</div>
+				<div class="colMain colScroll" id="col5panes">				
+					<div class="pane">
+						<div class="slideWrap">
+						<div class="article premium">
+							<div class="itemList slidingList">
+								<div class="item backSlide">
+									<h3>
+										<a href="#" class="slideLeft">&larr; Back to community</a>
+									</h3>									
+								</div>
+							</div>
+							<div id="col5article" class="innerArticle premiumBlocked">
+								<div class="premiumFeedHead"></div>
+								<p>You can also read this article on <a href="external.html" target="_blank" style="color:#333;">Debtwire</a></p>
+								<h2>Virgin Media Inc. Announces Pricing of &pound;715 Million Equivalent of Senior Notes Due 2019</h2>
+								<ul>
+								<li>Yesterday afternoon, the European Commission Anti-Cartel Investigation into the Bathroom Products industry was completed, with &euro;622m in fines imposed on
+								 17 companies in the sector (including c&euro;55m for Grohe).
+								</li><li>Grohe has 
+								Debtwire believes that any such provision will be smaller than 
+								frequently asserted that it has made provision for this fine, although 
+								either the actual fine, or the maximum 10%. 
+								</li><li>While the company considers its options, it will have to pay the fine or arrange a bank guarantee in the event of an appeal. 
+								</li><li>The levy will drain net liquid assets back down to the low levels see in the 
+								first half of 2009, although cash balances will still amount to some 
+								&euro;172m after payment. 
+								</li><li>With a 
+								pro-forma liquidity surplus of just &euro;30m, Grohe has little cushion in 
+								the event of a double-dip recession or a further unexpected call on cash 
+								</li><li>The fine will also have a negative impact on Grohe's credit metrics, although this will not be material.
+								</li><li>As one of the
+								 widest High Yield names in our coverage, Grohe has some scope for 
+								compression in the longer term, although in today's volatile markets, 
+								this is not the yet time to pile into the credit. We retain our 
+								Marketweight RV Opinion. </li></ul>
+											<p>Yesterday
+								 afternoon Grohe issued a Press Release confirming that the long-awaited
+								 Final Conclusion from the European Commission Anti-Cartel Investigation
+								 into the Bathroom Products industry had arrived. The investigation had 
+								been initiated in 2004 on the suspicion of anti-competitive practices, 
+								and has taken six years to reach a conclusion. The Commission concluded 
+								that 17 companies in the industry had indeed coordinated the sales price
+								 for bathroom fixture and fittings in the Germany, Austria, Italy, 
+								Belgium, France and The Netherlands. </p>
+								
+							
+								
+								
+								<a class="ui-state-default ui-corner-all btnStyle inlineStyle saveBtn"  href="#"><span class="ui-icon ui-icon-pin-s"></span>Save this</a>
+								<h3 class="commentsTitle">1 Comment</h3>
+								<div class="commentTemplate">
+									<p>It's about time this happened. Hopefully Grohe has learned from the last six years.</p>
+									<ul class="meta">
+										<li class="author"><span class="ui-icon ui-icon-comment"></span>22:04PM - <a href="#">Matt Ross</a></li>
+								    </ul>									
+								</div>
+								<div class="commentsForm">
+									<h3>Write a comment</h3>
+									<textarea name="c3comments1" id="c3comments1" cols="30" rows="4"></textarea>
+									<input type="submit" value="Send" />
+								</div>
+							</div>							
+						</div>
+						<div class="itemList" id="itemList5">
+							<div class="item report hidden l1" id="hiddenItem6">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Unisys Sells Insurance Unit </a>
+								</h3>
+								<a href="#" class="comments">0</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-document"></span>9:32AM - <a href="#">Debtwire</a></li>
+								</ul>
+							</div>
+							<div class="item report hidden l1" id="hiddenItem5">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Wind Bonds Gain On Reports Of Sale to VimpelCom </a>
+								</h3>
+								<a href="#" class="comments">0</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-document"></span>9:32AM - <a href="#">Debtwire</a></li>
+								</ul>
+							</div>
+							<div class="item chat l2">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">PolyOne Corp. Upgraded to 'B' From 'B-" On Improved Operating Performance; Outlook Positive</a>
+								</h3>
+								<a href="#" class="comments">2</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>11:32AM - <a href="#">Debtwire</a></li>
+								</ul>
+							</div>
+							<div class="item chat l6">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Unisys Sells Insurance Unit</a>
+								</h3>
+								<a href="#" class="comments">12</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-comment"></span>11:32AM - <a href="#">Debtwire</a></li>
+								</ul>
+							</div>
+							<div class="item chat l1">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Avis Nets Lender Approval For Amendment</a>
+								</h3>
+								<a href="#" class="comments">1</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>11:32AM - <a href="#">Debtwire</a></li>
+								</ul>
+							</div>	
+							<div class="item chat lcert">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">URI 3Q Earnings: Approaching The Bottom? </a>
+								</h3>
+								<a href="#" class="comments">83</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>11:32AM - <a href="#">Debtwire</a></li>
+								</ul>
+							</div>
+							<div class="item chat l5">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Dynergy Inc. - Bond Prices Volatile Following Acquisition by Blackstone </a>
+								</h3>
+								<a href="#" class="comments">83</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>11:32AM - <a href="#">Debtwire</a></li>
+								</ul>
+							</div>							
+							<div class="item chat l5">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">NRG Energy: $1.1bn of 10yrs to fund $1.9bn Gas Acquisition</a>
+								</h3>
+								<a href="#" class="comments">7</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>11:32AM - <a href="#">Debtwire</a></li>
+								</ul>
+							</div>							
+							<div class="item link l1">
+								  <div class="title">
+									<h3>
+									  <a href="#" class="slideRight">Junk buying fuels &#039;yield chasing&#039; fears</a>
+									</h3>
+									<a href="#" class="comments">5</a>
+								  </div>
+								  <ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Debtwire</a></li>
+								  </ul>
+								</div>
+								<div class="item link l1">
+								  <div class="title">
+									<h3>
+									  <a href="#" class="slideRight">Debate gathers pace on whether corporate bonds are too &#039;hot&#039;</a>
+									</h3>
+									<a href="#" class="comments">26</a>
+								  </div>
+								  <ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Debtwire</a></li>
+								  </ul>
+								</div>
+								<div class="item link l1">
+								  <div class="title">
+									<h3>
+									  <a href="#" class="slideRight">Is Ireland restaging Greek tragedy?</a>
+									</h3>
+									<a href="#" class="comments">42</a>
+								  </div>
+								  <ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Debtwire</a></li>
+								  </ul>
+								</div>
+								<div class="item link l1">
+								  <div class="title">
+									<h3>
+									  <a href="#" class="slideRight">Dubai bond sale set to raise up to $1.25bn</a>
+									</h3>
+									<a href="#" class="comments">41</a>
+								  </div>
+								  <ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Debtwire</a></li>
+								  </ul>
+								</div>
+								<div class="item link l1">
+								  <div class="title">
+									<h3>
+									  <a href="#" class="slideRight">BP plans return to capital markets</a>
+									</h3>
+									<a href="#" class="comments">0</a>
+								  </div>
+								  <ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Debtwire</a></li>
+								  </ul>
+								</div>
+								<div class="item link l1">
+								  <div class="title">
+									<h3>
+									  <a href="#" class="slideRight">Investors eye options for managing debt burden</a>
+									</h3>
+									<a href="#" class="comments">0</a>
+								  </div>
+								  <ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Debtwire</a></li>
+								  </ul>
+								</div>
+								<div class="item link l1">
+								  <div class="title">
+									<h3>
+									  <a href="#" class="slideRight">Dubai confirms sovereign bond</a>
+									</h3>
+									<a href="#" class="comments">2</a>
+								  </div>
+								  <ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Debtwire</a></li>
+								  </ul>
+								</div>
+								<div class="item link l1">
+								  <div class="title">
+									<h3>
+									  <a href="#" class="slideRight">Dubai confirms plan for bond issue</a>
+									</h3>
+									<a href="#" class="comments">29</a>
+								  </div>
+								  <ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Debtwire</a></li>
+								  </ul>
+								</div>
+								<div class="item link l1">
+								  <div class="title">
+									<h3>
+									  <a href="#" class="slideRight">Proposed Indian bourse &#039;not fit and proper&#039;</a>
+									</h3>
+									<a href="#" class="comments">11</a>
+								  </div>
+								  <ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Debtwire</a></li>
+								  </ul>
+								</div>
+								<div class="item link l1">
+								  <div class="title">
+									<h3>
+									  <a href="#" class="slideRight">Risk-free sovereign debt does not exist</a>
+									</h3>
+									<a href="#" class="comments">22</a>
+								  </div>
+								  <ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Debtwire</a></li>
+								  </ul>
+								</div>
+								<div class="item link l1">
+								  <div class="title">
+									<h3>
+									  <a href="#" class="slideRight">Jupiter reaps rewards from long-term view</a>
+									</h3>
+									<a href="#" class="comments">25</a>
+								  </div>
+								  <ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Debtwire</a></li>
+								  </ul>
+								</div>
+
+						</div>
+					</div>
+					</div>
+								
+			</div>
+			<div class="colFoot">
+				<div class="colFootWrap">
+					<div class="footBtns">
+						<a href="#" class="filterLink ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-gear"></span>Filters</a>
+						<a href="#"  class="ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-notice"></span>Alerts</a>	
+					</div>
+					<div class="smallSearch">
+						<input type="text" class="inlineSearch" id="inline5"/>    
+					</div>
+				</div>
+			</div>
+
+		</li>
+		<li class="col single" id="col3">
+			
+			<div class="dropAlert">Drop to combine these columns</div>
+				<div class="colHead">
+					<div class="tagHolder module tags">
+						<div id="breadCrumb1" class="breadCrumb module">
+							<ul>
+								<li>
+									<a href="#"><span class="ui-icon ui-icon-tag"></a>
+								</li>
+								<li>
+									<a href="#" class="crumbTag"><span class="inner">Virgin Media<span class="iconFloatRight ui-icon ui-icon-close"></span></span></a>
+								</li>
+								<li>
+									<a href="#" class="crumbTag"><span class="inner">New Issuance<span class="iconFloatRight ui-icon ui-icon-close"></span></span></a>
+								</li>								
+							</ul>
+						</div>
+					</div>
+					<ul class="orderPosts">
+						<li class="active"><a href="#">Recent</a></li>
+						<li><a href="#">Top today</a></li>
+						<li><a href="#">Top this week</a></li>
+					</ul>
+					<a href="#" class="closeBtn">Close column</a>
+					<a href="#" class="postBtn">New post</a>
+					<a href="#" class="refreshBtn">Refresh toggle</a>					
+					
+					<div class="filter">
+						<select name="postType" id="postSelect">
+									<option value="Chat">Chat</option>
+									<option value="Link">Link</option>									
+									<option value="Report">Report</option>
+									<option value="Poll">Poll</option>																	
+									<option value="Event">Event</option>
+									<option value="File">File</option>
+								</select>	
+								<input type="submit" value="Tags" class="filterLink colHeadTags"/> 
+							<div class="inputField message_display">
+								<form id="chatform5">     
+									<input type="text" id="msg5" class="message"/>       
+									<input type="submit" value="Send"/>   
+								</form>
+							</div>
+					</div>
+				</div>
+				<div class="colMain colScroll" id="col3panes">				
+					<div class="pane">
+						<div class="slideWrap">
+						<div class="article premium">
+							<div class="itemList slidingList">
+								<div class="item backSlide">
+									<h3>
+										<a href="#" class="slideLeft">&larr; Back to community</a>
+									</h3>									
+								</div>
+							</div>
+							<div id="col3article" class="innerArticle premiumBlocked">
+								<div class="premiumFeedHead"></div>
+								<h2>Credit Opinion: Virgin Media</h2>								
+								<p>To access this item, you can buy access to the item or sign up for a free trial below:</p>
+								<input type="submit" value="Buy access (25 Credits)" />								
+								<input type="submit" value="Sign up now" />								
+							</div>
+							
+						</div>
+						<div class="itemList" id="itemList3">							
+							<div class="item report hidden l1" id="hiddenItem3">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Virgin Media Inc. Completes Syndication of New Term Loan B Facility</a>
+								</h3>
+								<a href="#" class="comments">0</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-document"></span>9:32AM - <a href="#">Capital Structure</a></li>
+								</ul>
+							</div>
+							<div class="item chat l1">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Virgin Media Inc. Announces Dividend Declaration</a>
+								</h3>
+								<a href="#" class="comments">0</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>11:01AM - <a href="#">Capital Structure</a></li>
+								</ul>
+							</div>
+							<div class="item chat l1">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Virgin Media Inc. Announces Closing of £1.5 Billion Equivalent of Senior Secured Notes Due 2018</a>
+								</h3>
+								<a href="#" class="comments">0</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>11:12AM - <a href="#">Solly Amster</a></li>
+								</ul>
+							</div>
+							<div class="item chat l3">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Virgin Media Inc. Announces Offering Of GBP500 Million Equivalent Of Senior Secured Notes Due 2018</a>
+								</h3>
+								<a href="#" class="comments">3</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>11:12AM - <a href="#">Solly Amster</a></li>
+								</ul>
+							</div>
+							<div class="item link l4">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Virgin Media Inc. Announces Dividend Declaration</a>
+								</h3>
+								<a href="#" class="comments">16</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l1">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Virgin Media Inc. Announces Closing of Senior Notes Offering</a>
+								</h3>
+								<a href="#" class="comments">1</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l6">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Virgin Media Inc. Announces Pricing of £715 Million Equivalent of Senior Notes Due 2019</a>
+								</h3>
+								<a href="#" class="comments">24</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l1">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Virgin Media Inc. Completes Syndication of New Term Loan B Facility</a>
+								</h3>
+								<a href="#" class="comments">19</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+
+							<div class="item chat l5">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Virgin Media Presentation from Conference</a>
+								</h3>
+								<a href="#" class="comments">5</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>11:32AM - <a href="#">Ryan Beale</a></li>
+								</ul>
+							</div>
+							<div class="item chat l6">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Virgin Media Inc. Announces Pricing of £715 Million Equivalent of Senior Notes Due 2019</a>
+								</h3>
+								<a href="#" class="comments">21</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>4:32PM - <a href="#">Michael Lebowe</a></li>
+								</ul>
+							</div>
+							<div class="item chat l2">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Amendments To Virgin Media Inc.'s Senior Facilities Agreement Approved By Lenders</a>
+								</h3>
+								<a href="#" class="comments">2</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>4:32PM - <a href="#">Michael Lebowe</a></li>
+								</ul>
+							</div>
+							<div class="item chat l5">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Virgin Media Inc. Obtains Secondary Listing On London Stock Exchange</a>
+								</h3>
+								<a href="#" class="comments">5</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>4:32PM - <a href="#">Capital Structure</a></li>
+								</ul>
+							</div>							
+							<div class="item link l1">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Virgin Media Inc. Announces Intention To Proceed With Secondary Listing On The London Stock Exchange</a>
+								</h3>
+								<a href="#" class="comments">1</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l7">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Virgin Media Inc. Appoints Eamonn O'Hare As Chief Financial Officer</a>
+								</h3>
+								<a href="#" class="comments">37</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l2">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Virgin Media Inc. Announces Closing Of $600 Million Of Senior Notes Due 2016</a>
+								</h3>
+								<a href="#" class="comments">4</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+
+						</div>
+						
+					
+					</div>	
+				</div>			
+			</div>
+			<div class="colFoot">
+				<div class="colFootWrap">
+					<div class="footBtns">
+						<a href="#" class="filterLink ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-gear"></span>Filters</a>
+						<a href="#"  class="ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-notice"></span>Alerts</a>	
+					</div>
+					<div class="smallSearch">
+						<input type="text" class="inlineSearch" id="inline3" />    
+					</div>
+				</div>
+			</div>
+		
+		</li>
+		<li class="col single" id="col8">
+			
+			<div class="dropAlert">Drop to combine these columns</div>
+				<div class="colHead">		
+<div class="breadCrumbHolder module crumbPath">
+						<div id="breadCrumb8" class="breadCrumb module">
+							<ul>
+								<li>
+									<a href="#"><span class="ui-icon ui-icon-signal-diag"></a>
+								</li>
+								<li class="leftEnd">
+									<a href="#">Europe</a>
+								</li>
+								<li>
+									<a href="#">Credit</a>
+								</li>
+								<li>
+									<a href="#">Convertible Bonds</a>
+								</li>
+								<li>
+									<a href="#">TMT</a>
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+					<ul class="orderPosts">
+						<li class="active"><a href="#">Recent</a></li>
+						<li><a href="#">Top today</a></li>
+						<li><a href="#">Top this week</a></li>
+					</ul>
+					<a href="#" class="closeBtn">Close column</a>
+					<a href="#" class="postBtn">New post</a>
+						<a href="#" class="refreshBtn">Refresh toggle</a>
+					
+					<div class="filter">	
+								<select name="postType" id="postSelect">
+									<option value="Chat">Chat</option>
+									<option value="Link">Link</option>									
+									<option value="Report">Report</option>
+									<option value="Poll">Poll</option>																	
+									<option value="Event">Event</option>
+									<option value="File">File</option>
+								</select>
+								<input type="submit" value="Tags" class="filterLink colHeadTags"/> 
+							<div class="inputField message_display">
+								<form id="chatform8">     
+									<input type="text" id="msg8" class="message"/>       
+									  
+									<input type="submit" value="Send"/>   
+								</form>
+								
+							</div>
+					</div>
+				
+			</div>
+				<div class="colMain colScroll" id="col8panes">				
+					<div class="pane">
+						<div class="slideWrap">
+						<div class="article premium">
+							<div class="itemList slidingList">
+								<div class="item backSlide">
+									<h3>
+										<a href="#" class="slideLeft">&larr; Back to community</a>
+									</h3>									
+								</div>
+							</div>
+							<div id="col8article" class="innerArticle premiumBlocked">
+								<div class="premiumFeedHead"></div>
+								<h2>Citigroup and Terra Firma go to mediation over EMI acquisition</h2>								
+								<p>To access this item, please log in or sign up for a free trial below:</p>
+								<input type="submit" value="Log in" />								
+								<input type="submit" value="Sign up now" />								
+							</div>
+							
+						</div>
+						<div class="itemList" id="itemList8">							
+							<div class="item report hidden l1" id="hiddenItem">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Wind Bonds Gain On Reports Of Sale to VimpelCom: </a>
+								</h3>
+								<a href="#" class="comments">0</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-document"></span>9:32AM - <a href="#">Capital Structure</a></li>
+								</ul>
+							</div>
+							<div class="item chat l8">
+								<div class="title">
+								<h3>
+									<a href="pdf5.html" target="_blank">Credit Opinion: Ineos Group Holdings plc</a>
+								</h3>
+								<a href="#" class="comments">52</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="pdfIcon"></span>11:01AM - <a href="#">Moody's</a></li>
+								</ul>
+							</div>
+							<div class="item chat l1">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">VMED CDS is starting to look a bit rich compared to Unitymedia and KDG, the basis is now 75bps, it was only 30bps three weeks ago..</a>
+								</h3>
+								<a href="#" class="comments">0</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>11:12AM - <a href="#">Solly Amster</a></li>
+								</ul>
+							</div>
+							<div class="item chat l3">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Hellas Change of Corporate Address</a>
+								</h3>
+								<a href="#" class="comments">3</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>11:12AM - <a href="#">Solly Amster</a></li>
+								</ul>
+							</div>
+							<div class="item link l4">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Consumer goods help US stocks shake off data [at Financial Times] (Financial Times)</a>
+								</h3>
+								<a href="#" class="comments">16</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l1">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">HP puts weight behind Palm smartphone system [at Financial Times] (Financial Times)</a>
+								</h3>
+								<a href="#" class="comments">1</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l6">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">UPDATE 3-Endo to buy generic drugmaker Qualitest for $1.2 bln (Reuters - UK Focus)</a>
+								</h3>
+								<a href="#" class="comments">24</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l1">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Small caps round-up: ASOS, Japan Leisure Hotels, Vertu Motors...... (Sharecast)</a>
+								</h3>
+								<a href="#" class="comments">19</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+
+							<div class="item chat l5">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Virgin Media Presentation from Conference</a>
+								</h3>
+								<a href="#" class="comments">5</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>11:32AM - <a href="#">Ryan Beale</a></li>
+								</ul>
+							</div>
+							<div class="item chat l6">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Eircom Seeks to Hire Adviser on Debts</a>
+								</h3>
+								<a href="#" class="comments">21</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>4:32PM - <a href="#">Michael Lebowe</a></li>
+								</ul>
+							</div>
+							<div class="item chat l2">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">KDG Rejects Regulator Move</a>
+								</h3>
+								<a href="#" class="comments">2</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>4:32PM - <a href="#">Michael Lebowe</a></li>
+								</ul>
+							</div>
+							<div class="item chat l5">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">ITV see Rumor of European Bid</a>
+								</h3>
+								<a href="#" class="comments">5</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>4:32PM - <a href="#">Capital Structure</a></li>
+								</ul>
+							</div>							
+							<div class="item link l1">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Albemarle &amp; Bond profits jumps as gold price soars (Sharecast)</a>
+								</h3>
+								<a href="#" class="comments">1</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l7">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Wednesday preview: Smiths Group, Domino s, Topps Tiles (Sharecast)</a>
+								</h3>
+								<a href="#" class="comments">37</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l2">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Market overview: Higher finish after late rally (Sharecast)</a>
+								</h3>
+								<a href="#" class="comments">4</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+
+						</div>
+						
+					
+					</div>	
+				</div>			
+			</div>
+			<div class="colFoot">
+				<div class="colFootWrap">
+					<div class="footBtns">
+						<a href="#" class="filterLink ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-gear"></span>Filters</a>
+						<a href="#"  class="ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-notice"></span>Alerts</a>	
+					</div>
+					<div class="smallSearch">
+						<input type="text" class="inlineSearch" id="inline3" />    
+					</div>
+				</div>
+			</div>
+		
+		</li>
+		<li class="col single" id="col4">
+			<div class="dropAlert">Drop to combine these columns</div>
+			<div class="colHead">		
+<div class="breadCrumbHolder module crumbPath">
+						<div id="breadCrumb2" class="breadCrumb module">
+							<ul>
+								<li>
+									<a href="#"><span class="ui-icon ui-icon-signal-diag"></a>
+								</li>
+								<li class="leftEnd">
+									<a href="#">Europe</a>
+								</li>
+								<li>
+									<a href="#">Credit</a>
+								</li>
+								<li>
+									<a href="#">Leveraged Loans</a>
+								</li>
+								<li>
+									<a href="#">TMT</a>
+								</li>										
+							</ul>
+						</div>
+					</div>
+					<ul class="orderPosts">
+						<li class="active"><a href="#">Recent</a></li>
+						<li><a href="#">Top today</a></li>
+						<li><a href="#">Top this week</a></li>
+					</ul>
+					<a href="#" class="closeBtn">Close column</a>
+					<a href="#" class="postBtn">New post</a>
+						<a href="#" class="refreshBtn">Refresh toggle</a>
+					
+					<div class="filter">	
+								<select name="postType" id="postSelect">
+									<option value="Chat">Chat</option>
+									<option value="Link">Link</option>									
+									<option value="Report">Report</option>
+									<option value="Poll">Poll</option>																	
+									<option value="Event">Event</option>
+									<option value="File">File</option>
+								</select>
+								<input type="submit" value="Tags" class="filterLink colHeadTags"/> 
+							<div class="inputField message_display">
+								<form id="chatform4">     
+									<input type="text" id="msg4" class="message"/>       
+									<input type="submit" value="Send"/>   
+								</form>
+							</div>
+					</div>
+				
+			</div>
+			<div class="colMain colScroll" id="col4panes">				
+					<div class="pane">
+						<div class="slideWrap">
+						<div class="article">
+							<div class="itemList slidingList">
+								<div class="item backSlide">
+									<h3>
+										<a href="#" class="slideLeft">&larr; Back to community</a>
+									</h3>									
+								</div>
+							</div>
+							<div id="col4article" class="innerArticle">
+								<h2>EUR Telcos - Which EUR IG Telco is Exposed to the Most M&amp;A Event Risk</h2>
+								<p>
+									<form action="">
+									<ul class="pollList">
+										<li><input type="radio" name="col4" value="vrg" />British Telecom</li>
+										<li><input type="radio" name="col4" value="vag" />Deutsche Telekom</li>
+										<li><input type="radio" name="col4" value="vdg" />Orange</li>
+										<li><input type="radio" name="col4" value="vgg" />Versatel</li>										
+																		
+									</ul>
+										<input type="submit" value="Vote" class="voteBtn" />280 votes so far	
+									</form>
+								</p>
+								<a class="ui-state-default ui-corner-all btnStyle inlineStyle saveBtn"  href="#"><span class="ui-icon ui-icon-pin-s"></span>Save this</a>
+								<h3 class="commentsTitle">1 Comment</h3>
+								<div class="commentsList">
+									<div class="commentTemplate">
+										<p>I don't think the choice of answers is particularly illuminating, getting another major incumbent telco in there instead of Versatel would be more appropriate.</p>
+										<ul class="meta">
+											<li class="author"><span class="ui-icon ui-icon-comment"></span>22:04PM - <a href="#">Matt Ross</a></li>
+										</ul>									
+									</div>
+								</div>
+								<div class="commentsForm">
+									<form>
+									<h3>Write a comment</h3>
+									<textarea name="c4comments1" id="c4comments1" cols="30" rows="4"></textarea>
+									<input type="submit" value="Send" />
+									</form>
+								</div>
+							</div>							
+						</div>
+						<div class="itemList" id="itemList4">							
+							<div class="item report hidden l1" id="hiddenItem4">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Wind Bonds Gain On Reports Of Sale to VimpelCom: </a>
+								</h3>
+								<a href="#" class="comments">0</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-document"></span>9:32AM - <a href="#">Capital Structure</a></li>
+								</ul>
+							</div>
+							<div class="item chat l6">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">BT Plunks Down Another $1.5bn On FTTX Network</a>
+								</h3>
+								<a href="#" class="comments">9</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>9:32AM - <a href="#">Connor James</a></li>
+								</ul>
+							</div>
+							<div class="item chat lcert">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">French Telecom Operators' Comment on Q3 Trends at Conference</a>
+								</h3>
+								<a href="#" class="comments">4</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-document"></span>9:32AM - <a href="#">Mark Gross</a></li>
+								</ul>
+							</div>
+							<div class="item chat l2">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">UK Telecoms &amp; Media: August 2010 Regulatory Update</a>
+								</h3>
+								<a href="#" class="comments">2</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extlink"></span>9:32AM - <a href="#">Debtwire</a></li>
+								</ul>
+							</div>
+							<div class="item chat l8">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">EUR Telcos - Which EUR IG Telco is Exposed to the Most M&amp;A Event Risk</a>
+								</h3>
+								<a href="#" class="comments">52</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-help"></span>10:32AM - <a href="#">John Yagobian</a></li>
+								</ul>
+							</div>
+							<div class="item chat l4">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Havas Primed to Pursue New Deals</a>
+								</h3>
+								<a href="#" class="comments">4</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extLink"></span>10:32AM - <a href="#">John Yagobian</a></li>
+								</ul>
+							</div>
+							<div class="item chat l2">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Telecoms Provider Portugal Telecom 'BBB' Ratings Affirmed On Sale Of Stake In Brasilcel; Off Watch; Outlook Stable</a>
+								</h3>
+								<a href="#" class="comments">2</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extLink"></span>10:32AM - <a href="#">Moody's</a></li>
+								</ul>
+							</div>
+							
+							<div class="item chat l3">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">STMicro Business &amp; Operations Company Update</a>
+								</h3>
+								<a href="#" class="comments">3</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extLink"></span>11:32AM - <a href="#">Jason Kelly</a></li>
+								</ul>
+							</div>
+							<div class="item chat l1">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Time for everyone to reassess their TMT bonds</a>
+								</h3>
+								<a href="#" class="comments">1</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-comment"></span>11:32AM - <a href="#">Jason Kelly</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					</div>
+							
+			</div>
+			<div class="colFoot">
+				<div class="colFootWrap">
+					<div class="footBtns">
+						<a href="#" class="filterLink ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-gear"></span>Filters</a>
+						<a href="#"  class="ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-notice"></span>Alerts</a>	
+					</div>
+					<div class="smallSearch">
+						<input type="text" class="inlineSearch" id="inline4"/>    
+					</div>
+				</div>
+			</div>
+		
+		</li>
+		
+		<li class="col single" id="col6">
+			<div class="dropAlert">Drop to combine these columns</div>
+				<div class="colHead">
+					<div class="breadCrumbHolder module crumbPath">
+						<div id="breadCrumb4" class="breadCrumb module">
+							<ul>
+								<li>
+									<a href="#"><span class="ui-icon ui-icon-signal-diag"></a>
+								</li>
+								<li class="leftEnd">
+									<a href="#">US</a>
+								</li>
+								<li>
+									<a href="#">Credit</a>
+								</li>
+								<li>
+									<a href="#">Topics</a>
+								</li>
+								<li>
+									<a href="#">Trade Ideas</a>
+								</li>								
+							</ul>
+							<a class="smallClose"><span class="ui-icon ui-icon-close"></span></a>
+						</div>
+					</div>
+					<ul class="orderPosts">
+						<li class="active"><a href="#">Recent</a></li>
+						<li><a href="#">Top today</a></li>
+						<li><a href="#">Top this week</a></li>
+					</ul>
+					<a href="#" class="closeBtn">Close column</a>
+					<a href="#" class="postBtn">New post</a>
+					<a href="#" class="refreshBtn">Refresh toggle</a>
+					<div class="filter">	
+								<select name="postType" id="postSelect">
+									<option value="Chat">Chat</option>
+									<option value="Link">Link</option>									
+									<option value="Report">Report</option>
+									<option value="Poll">Poll</option>																	
+									<option value="Event">Event</option>
+									<option value="File">File</option>
+								</select>
+								<input type="submit" value="Tags" class="filterLink colHeadTags"/> 
+							<div class="inputField message_display">
+								<form id="chatform6">     
+									<input type="text" id="msg6" class="message"/>       
+									<input type="submit" value="Send"/>   
+								</form>
+							</div>	
+					</div>
+				</div>
+				<div class="colMain colScroll" id="col6panes">				
+					<div class="pane">
+						<div class="itemList" id="itemList6">
+							<div class="item l6">
+								<div class="title">
+								<h3>
+									<a href="pdf.html" class="slideRight" target="_blank">Virgin Media - Second Quarter 2010 Results</a>
+								</h3>
+								<a href="#" class="comments">15</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="pdfIcon"></span>7:52AM - <a href="#">George Richardson</a></li>
+								</ul>
+							</div>
+							<div class="item l2">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Nordstrom's Outlook to Stable</a>
+								</h3>
+								<a href="#" class="comments">1</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>7:52AM - <a href="#">Moody's Rating Action</a></li>
+								</ul>
+							</div>
+							<div class="item l1">
+								<div class="title">
+								<h3>
+									<a href="moodys.html" target="_blank">Smartphones Jump-Start Growth in 2010-11</a>
+								</h3>
+								<a href="#" class="comments">1</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="pdfIcon"></span>7:52AM - <a href="#">Moody's</a></li>
+								</ul>
+							</div>
+							
+							<div class="item chat l6">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Johnson Controls 3Q Conference Transcript Highly Entertaining</a>
+								</h3>
+								<a href="#" class="comments">18</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extLink"></span>10:32AM - <a href="#">Jim Mclaren</a></li>
+								</ul>
+							</div>
+							<div class="item chat l1">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Kraft 2Q10: Competition Cuts Sales</a>
+								</h3>
+								<a href="#" class="comments">2</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>10:32AM - <a href="#">Debtwire</a></li>
+								</ul>
+							</div>
+							<div class="item chat l1">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Halliburton - BP Accident Report Lays Off Blame To Contractors</a>
+								</h3>
+								<a href="#" class="comments">2</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-comment"></span>9:32AM - <a href="#">Frank Gifford</a></li>
+								</ul>
+							</div>
+							<div class="item chat l4">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">GATX Places $250m of IG Notes at 4.92% With HY Covenants, terms</a>
+								</h3>
+								<a href="#" class="comments">4</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>10:32AM - <a href="#">Capital Structure</a></li>
+								</ul>
+							</div>
+							<div class="item chat l6">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Johnson Controls 3Q Conference Transcript Highly Entertaining</a>
+								</h3>
+								<a href="#" class="comments">18</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-extLink"></span>10:32AM - <a href="#">Jim Mclaren</a></li>
+								</ul>
+							</div>
+							<div class="item chat l1">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Kraft 2Q10: Competition Cuts Sales</a>
+								</h3>
+								<a href="#" class="comments">2</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>10:32AM - <a href="#">Debtwire</a></li>
+								</ul>
+							</div>
+							<div class="item chat l1">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Halliburton - BP Accident Report Lays Off Blame To Contractors</a>
+								</h3>
+								<a href="#" class="comments">2</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-comment"></span>9:32AM - <a href="#">Frank Gifford</a></li>
+								</ul>
+							</div>
+							
+								
+							</div>
+						</div>
+					</div>
+						
+			<div class="colFoot">
+				<div class="colFootWrap">
+					<div class="footBtns">
+						<a href="#" class="filterLink ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-gear"></span>Filters</a>
+						<a href="#"  class="ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-notice"></span>Alerts</a>	
+					</div>
+					<div class="smallSearch">
+						<input type="text" class="inlineSearch" id="inline6"/>    
+					</div>
+				</div>
+			</div>
+			
+		</li>		
+		<li class="col single" id="col7">
+			<div class="dropAlert">Drop to combine these columns</div>
+				<div class="colHead">
+					<div class="breadCrumbHolder module crumbPath">
+						<div id="breadCrumb4" class="breadCrumb module">
+							<ul>
+								<li>
+									<a href="#"><span class="ui-icon ui-icon-signal-diag"></a>
+								</li>
+								<li class="leftEnd">
+									<a href="#">US</a>
+								</li>
+								<li>
+									<a href="#">Credit</a>
+								</li>
+								<li>
+									<a href="#">Topics</a>
+								</li>
+								<li>
+									<a href="#">Event Driven</a>
+								</li>								
+							</ul>
+						</div>
+					</div>
+					<ul class="orderPosts">
+						<li class="active"><a href="#">Recent</a></li>
+						<li><a href="#">Top today</a></li>
+						<li><a href="#">Top this week</a></li>
+					</ul>
+					<a href="#" class="closeBtn">Close column</a>
+					<a href="#" class="postBtn">New post</a>
+					<a href="#" class="refreshBtn">Refresh toggle</a>
+					<div class="filter">	
+								<select name="postType" id="postSelect">
+									<option value="Chat">Chat</option>
+									<option value="Link">Link</option>									
+									<option value="Report">Report</option>
+									<option value="Poll">Poll</option>																	
+									<option value="Event">Event</option>
+									<option value="File">File</option>
+								</select>
+								<input type="submit" value="Tags" class="filterLink colHeadTags"/> 
+							<div class="inputField message_display">
+								<form id="chatform2">     
+									<input type="text" id="msg2" class="message"/>       
+									<input type="submit" value="Send"/>   
+								</form>
+							</div>	
+					</div>
+				</div>
+				<div class="colMain colScroll" id="col7panes">				
+					<div class="pane">
+						<div class="itemList" id="itemList7">
+							<div class="item chat l2">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Simon Property: Closes Prime Outlets Acquisition</a>
+								</h3>
+								<a href="#" class="comments">3</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>9:32AM - <a href="#">Debtwire</a></li>
+								</ul>
+							</div>
+							<div class="item chat l2">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Toll Brothers Outlook Revised To Stable From Negative; 'BBB-' Corporate Credit Ratings Affirmed</a>
+								</h3>
+								<a href="#" class="comments">3</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>9:32AM - <a href="#">Moody's</a></li>
+								</ul>
+							</div>
+							<div class="item chat l4">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Xerox Completes Acquisition of Affiliated Computer Services</a>
+								</h3>
+								<a href="#" class="comments">4</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>9:32AM - <a href="#">Capital Structure</a></li>
+								</ul>
+							</div>
+							<div class="item chat l7">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">Moody's Risk Assessment: SLM Corporation</a>
+								</h3>
+								<a href="#" class="comments">31</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>9:32AM - <a href="#">Moody's</a></li>
+								</ul>
+							</div>
+							<div class="item chat l7">
+								<div class="title">
+								<h3>
+									<a href="#" class="slideRight">July 2010 US Company Recommendation Changes</a>
+								</h3>
+								<a href="#" class="comments">1</a>
+								</div>
+								<ul class="meta">
+									<li class="author"><span class="ui-icon ui-icon-signal-diag"></span>9:32AM - <a href="#">Adam Feldheim</a></li>
+								</ul>
+							</div>
+							<div class="item link l1">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">FTSE lower as US consumers lose confidence [at Financial Times] (Financial Times)</a>
+								</h3>
+								<a href="#" class="comments">22</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l2">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">US housing data weigh on Wall Street [at Financial Times] (Financial Times)</a>
+								</h3>
+								<a href="#" class="comments">41</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#"></a></li>
+							  </ul>
+							</div>
+							<div class="item link l4">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Michelin goes for growth with shock capital rise (AFP)</a>
+								</h3>
+								<a href="#" class="comments">50</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Matt Ross</a></li>
+							  </ul>
+							</div>
+							<div class="item link l3">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Lloyds of London profits hit by disasters (Sharecast)</a>
+								</h3>
+								<a href="#" class="comments">44</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Adam Felfheim</a></li>
+							  </ul>
+							</div>
+							<div class="item link l1">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Close Brother s year profit rises (Reuters)</a>
+								</h3>
+								<a href="#" class="comments">15</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Eric Claptop</a></li>
+							  </ul>
+							</div>
+							<div class="item link l5">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Market overview: FTSE 100 down 9 (Sharecast)</a>
+								</h3>
+								<a href="#" class="comments">2</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Adam Felfheim</a></li>
+							  </ul>
+							</div>
+							<div class="item link l6">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Corrected - Close Brother s year profit rises (Reuters)</a>
+								</h3>
+								<a href="#" class="comments">30</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Zoltan Ray</a></li>
+							  </ul>
+							</div>
+							<div class="item link l1">
+							  <div class="title">
+								<h3>
+								  <a href="#" class="slideRight">Small cap round-up: International Ferro, Norseman Gold, Atlantic Coal... (Sharecast)</a>
+								</h3>
+								<a href="#" class="comments">4</a>
+							  </div>
+							  <ul class="meta">
+								<li class="author"><span class="ui-icon ui-icon-extlink"></span>22:04PM - <a href="#">Zoltan Ray</a></li>
+							  </ul>
+							</div>
+
+							
+						</div>
+					</div>
+								
+			</div>
+			<div class="colFoot">
+				<div class="colFootWrap">
+					<div class="footBtns">
+						<a href="#" class="filterLink ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-gear"></span>Filters</a>
+						<a href="#"  class="ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-notice"></span>Alerts</a>	
+					</div>
+					<div class="smallSearch">
+						<input type="text" class="inlineSearch" id="inline7"/>    
+					</div>
+				</div>
+			</div>
+		
+		</li>
+		
+		</ul>
+	</div>
+	<div id="footer">
+		
+	</div>
+	
+	<div class="login">
+		<div class="loginPanel">
+			<h1>Project Alpha</h1>
+			<form id="loginForm">				
+				<span class="user">
+					<label for="loginName">Your email address</label>
+					<input type="email" id="loginName" />
+				</span>
+				<span class="user">
+					<label for="loginName">Password</label>
+					<input type="password" id="loginPassword" />
+				</span>
+				<input type="submit" value="Sign in" id="signIn"/>
+				<input type="submit" value="Request invite"/>
+			</form>
+		</div>
+		<div class="loading"></div>
+	</div> 
+	<div class="filterModal">
+		<div class="filterCols">		
+		<div class="filterCol">
+			<h3>Event Driven</h3>
+			<ul>
+				<li><a href="#url"><input type="checkbox"  name="show" value="showAll" id="checkReports"/><label for="checkReports" class="checks">LBO</label></a></li>
+				<li><a href="#url"><input type="checkbox"  name="show" value="showAll" id="checkChat"/><label for="checkChat" class="checks">IPO/Exit Activity</label></a></li>
+				<li><a href="#url"><input type="checkbox"  name="show" value="showAll" id="checkFeeds"/><label for="checkFeeds" class="checks">M&amp;A</label></a></li>
+				<li><a href="#url"><input type="checkbox"  name="show" value="showAll" id="checkPolls"/><label for="checkPolls" class="checks">Asset Sales</label></a></li>
+				<li><a href="#url"><input type="checkbox"  name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Misc</label></a></li>										
+			</ul>
+		</div>
+		<div class="filterCol">
+			<h3>Capital Structure</h3>
+			<ul>
+				<li><a href="#url"><input type="checkbox"  name="show" value="showAll" id="checkReports"/><label for="checkReports" class="checks">Covenants</label></a></li>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkChat"/><label for="checkChat" class="checks">New issuance</label></a></li>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkFeeds"/><label for="checkFeeds" class="checks">Refinancing</label></a></li>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkPolls"/><label for="checkPolls" class="checks">Restructuring</label></a></li>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Distressed Exchange</label></a></li>										
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Shareholders</label></a></li>										
+			</ul>
+		</div>
+		<div class="filterCol">
+			<h3>Idiosyncratic</h3>
+			<ul>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkReports"/><label for="checkReports" class="checks">Earnings</label></a></li>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkChat"/><label for="checkChat" class="checks">Liquidity</label></a></li>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkFeeds"/><label for="checkFeeds" class="checks">Leverage</label></a></li>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkPolls"/><label for="checkPolls" class="checks">Capex</label></a></li>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Management</label></a></li>										
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Litigation</label></a></li>										
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Pensions</label></a></li>										
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Ratings</label></a></li>										
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Recover</label></a></li>										
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Regulatory</label></a></li>										
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Trends</label></a></li>										
+			</ul>
+		</div>
+		<div class="filterCol">
+			<h3>Trade Ideas</h3>
+			<ul>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkReports"/><label for="checkReports" class="checks">Relative Value Pair Trade</label></a></li>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkChat"/><label for="checkChat" class="checks">Capital Structure Arbitrage</label></a></li>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkFeeds"/><label for="checkFeeds" class="checks">Event Driven</label></a></li>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkPolls"/><label for="checkPolls" class="checks">Macro (top down)</label></a></li>
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Micro (bottom up)</label></a></li>										
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Curve Trade</label></a></li>										
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Core Long</label></a></li>										
+				<li><a href="#url"><input type="checkbox" name="show" value="showAll" id="checkLinks"/><label for="checkLinks" class="checks">Core Short</label></a></li>	
+			</ul>
+		</div>
+		</div>
+		<div class="filterFoot">
+			<a href="#"  class="ui-state-default ui-corner-all btnStyle"><span class="ui-icon ui-icon-disk"></span>Save</a>
+		</div>
+	</div>
+</body>
+</html>

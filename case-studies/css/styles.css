@@ -1,0 +1,51 @@
+/* ============================== */
+/* ! Layout for desktop version   */
+/* ============================== */
+
+	body {
+		
+	}
+	
+
+/* ============================= */
+/* ! Layout for mobile version   */
+/* ============================= */
+
+@media handheld, only screen and (max-width: 767px) {
+
+	body {
+		
+	}
+
+}
+
+
+/* ========================================== */
+/* ! Provide higher res assets for iPhone 4   */
+/* ========================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+
+/*	.logo {
+		background: url(logo2x.jpg) no-repeat;
+		background-size: 212px 303px;
+	}*/
+
+}
+
+
+/* Type styles */
+body {font-family:Georgia, "Times New Roman", serif;}
+h1 {font-size:106px; font-weight:normal;margin:0.5em 0;line-height: 1.2em;}
+h2 {font-size:56px; font-weight:normal;margin-bottom:0.5em;line-height: 1.2em;}
+h3 {font-size:36px; font-weight:normal;margin-bottom:0.5em;line-height: 1.2em;}
+em.intro {font-size:22px; font-style:normal; margin-bottom:1em; display:block;line-height:1.5em;}
+em.outro {font-size:22px; margin-bottom:1em; display:block;line-height:1.5em;}
+p {margin-bottom:1em; line-height:1.5em;}
+.row {margin-bottom:40px;}
+ul {list-style-type:disc; list-style-position:inside;margin:0 0 1em 1em;}
+ul li {line-height:1.5em;}
+.block {background:#000; color:#fff; padding:10px 15px; font-style:italic; display:inline-block;text-decoration:none; margin-bottom:1em;}
+.block:hover {background:#333; text-decoration:underline;}
+.introBox {background:#eaeaea; padding:20px; overflow:hidden;}
+.introtext{padding:20px 0 0 20px;}
